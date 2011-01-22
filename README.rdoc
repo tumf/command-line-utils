@@ -1,6 +1,50 @@
 = command-line-utils
 
-Description goes here.
+This is a command line utilites.
+
+== Base classes
+
+* CommandLineUtils::CLI
+* CommandLineUtils::Commands
+
+=== Simple Usage
+
+ require 'command-line-utils' 
+ module _YourCommand_
+   class CLI < CommandLineUtils::CLI
+     def initialize
+       super
+       @commands = Commands.new
+     end
+   end
+   class Commands < CommandLineUtils::Commands
+     def _your_command_
+       OptionParser.new{ |opt|
+         opt.on('-o','--long-option', 'about option') { ... }
+       }.parse!(@command_options)
+       @summery = "This is a sample option."
+       @banner = "[-o|--long-option]"
+       return opt if @help
+       
+       # your commands ...
+       
+     end
+   end
+ end
+
+== executable template
+
+Put your command under bin directory.
+
+ #!/usr/bin/env ruby
+ $:.unshift(File.join(File.dirname(__FILE__),'..','lib')
+ require 'unit-hosting/cli'
+ _YourCommand_::CLI::run(ARGV)
+ exit
+
+== Install
+
+ sudo gem install command-line-utils
 
 == Contributing to command-line-utils
  
