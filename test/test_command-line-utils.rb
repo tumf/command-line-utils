@@ -1,7 +1,13 @@
 require 'helper'
-
 class TestCommandLineUtils < Test::Unit::TestCase
-  should "probably rename this file and start testing for real" do
-    flunk "hey buddy, you should probably rename this file and start testing for real"
+  context "CLI" do
+    should "load" do
+      assert(CommandLineUtils::CLI.new)
+    end
+  end
+  context "commands" do
+    should "load" do
+      assert(CommandLineUtils::Commands.new)
+    end
   end
 end
