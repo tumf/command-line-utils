@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{command-line-utils}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Yoshihiro TAKAHARA"]
-  s.date = %q{2011-01-22}
+  s.date = %q{2011-02-21}
   s.description = %q{This is a command line utilites.}
   s.email = %q{y.takahara@gmail.com}
   s.extra_rdoc_files = [
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "command-line-utils.gemspec",
     "lib/command-line-utils.rb",
     "lib/command-line-utils/cli.rb",
     "lib/command-line-utils/commands.rb",
@@ -32,7 +33,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/tumf/command-line-utils}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.4.2}
+  s.rubygems_version = %q{1.5.0}
   s.summary = %q{Command line utilities.}
   s.test_files = [
     "test/helper.rb",
