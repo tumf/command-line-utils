@@ -10,7 +10,7 @@ module CommandLineUtils
     end
 
     def dispatch(cmd,cmd_argv)
-      @commands.send(cmd)
+      @commands.send(cmd.sub(/:/,"_"))
     end
 
     def options

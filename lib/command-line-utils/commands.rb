@@ -22,10 +22,10 @@ module CommandLineUtils
       @help = true
       command = @command_options.shift
       raise "Unknown command: " + command unless commands.include?(command)
-      opt = send(command)
+      opt = send(command.sub(/:/,"_"))
       puts "Summery: #{@summery}"
-      opt.banner += " #{command} #{@banner}"
-      puts opt
+      opt.banner += " #{command} #{@banner}" if opt
+      puts opt if opt
     end
   end
 end
