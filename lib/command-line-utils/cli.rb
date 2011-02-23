@@ -32,8 +32,8 @@ module CommandLineUtils
         dispatch(cmd,cmd_argv)
       rescue =>e
         puts "Message: #{e}"
-        puts ""
-        usage unless @options[:debug]
+        # puts ""
+        # usage unless @options[:debug]
         raise e if @options[:debug]
       end
     end
