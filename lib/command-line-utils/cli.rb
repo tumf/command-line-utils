@@ -30,7 +30,10 @@ module CommandLineUtils
         @commands.options = @options
         @commands.command_options = cmd_argv
         dispatch(cmd,cmd_argv)
-      rescue =>e
+      rescue UsageException => e
+        usage
+        raise e if @options[:debug]
+      rescue => e
         puts "Message: #{e}"
         # puts ""
         # usage unless @options[:debug]

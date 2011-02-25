@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 require 'optparse'
 module CommandLineUtils
+  class UsageException < Exception; end
   class Commands
     attr_reader :commands
     attr_accessor :options,:command_options
@@ -21,6 +22,7 @@ module CommandLineUtils
 
       @help = true
       command = @command_options.shift
+      raise UsageException unless command
       raise "Unknown command: " + command unless commands.include?(command)
       opt = send(command.sub(/:/,"_"))
       puts "Summery: #{@summery}"
