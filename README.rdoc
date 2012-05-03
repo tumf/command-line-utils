@@ -61,3 +61,4 @@ Put your command under bin directory.
 Copyright (c) 2011 Yoshihiro TAKAHARA. See LICENSE.txt for
 further details.
 
+{<img src="http://api.coderwall.com/tumf/endorsecount.png"/>}[http://coderwall.com/tumf]
