@@ -24,7 +24,7 @@ module CommandLineUtils
       command = @command_options.shift
       raise UsageException unless command
       raise "Unknown command: " + command unless commands.include?(command)
-      opt = send(command.sub(/:/,"_"))
+      opt = send(command.gsub(/:/,"_"))
       puts "Summery: #{@summery}"
       opt.banner += " #{command} #{@banner}" if opt
       puts opt if opt
